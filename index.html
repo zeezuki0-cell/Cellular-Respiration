@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cellular Respiration Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Cellular Respiration</h1>
+  <p>Step through every reaction, from glucose to ATP. Click any step in the diagram, or use the arrow keys.</p>
+</header>
+<main>
+  <nav id="tabs" class="tabs" aria-label="Stages"></nav>
+  <p id="intro" class="intro"></p>
+  <section class="sim">
+    <div id="diagram" class="diagram"></div>
+    <div class="detail" aria-live="polite">
+      <div id="icon" class="icon" aria-hidden="true"></div>
+      <p id="where" class="where"></p>
+      <h2 id="stepName"></h2>
+      <p id="reaction" class="reaction"></p>
+      <p id="enzyme" class="enzyme"></p>
+      <p id="desc" class="desc"></p>
+      <div id="deltas" class="deltas"></div>
+    </div>
+  </section>
+  <div class="controls">
+    <button type="button" id="prev">← Back</button>
+    <button type="button" id="play">▶ Auto-play</button>
+    <button type="button" id="next">Next →</button>
+    <button type="button" id="reset" class="reset">Restart</button>
+  </div>
+  <section class="energy">
+    <h2>Energy Tracker <small>(per glucose, running total)</small></h2>
+    <div class="counters">
+      <div><h3>ATP</h3><p id="atp">0</p></div>
+      <div><h3>NADH</h3><p id="nadh">0</p></div>
+      <div><h3>FADH₂</h3><p id="fadh">0</p></div>
+      <div><h3>CO₂</h3><p id="co2">0</p></div>
+    </div>
+    <h3 class="gh">H⁺ in intermembrane space: <span id="hnum">0</span></h3>
+    <div class="meter"><div id="hbar"></div></div>
+    <p id="final" class="final"></p>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
